@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { FaPhoneAlt } from "react-icons/fa";
-import { MdEmail, MdOutlineEmail } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { LuPlane } from "react-icons/lu";
 import { MdHomeWork } from "react-icons/md";
