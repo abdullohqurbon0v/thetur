@@ -1,13 +1,21 @@
+'use client'
+
 import Image from 'next/image';
 import { FaPhoneAlt } from "react-icons/fa";
-import { MdOutlineEmail } from "react-icons/md";
+import { MdEmail, MdOutlineEmail } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { LuPlane } from "react-icons/lu";
 import { MdHomeWork } from "react-icons/md";
 import { FaKaaba } from "react-icons/fa";
 import { MdMarkEmailUnread } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
+import { useState } from 'react';
 
 const MainPage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   const data = [
     {
       icon: IoHomeOutline,
@@ -79,7 +87,6 @@ const MainPage = () => {
     "Maldiva"
   ]
 
-  //https://mandarin-tour.uz/wp-content/uploads/2022/01/slider-man.webp
   return (
     <div>
       <main className='main bg-gray-900'>
@@ -88,16 +95,16 @@ const MainPage = () => {
             <div className='max-w-[1200px] mx-auto flex py-2 justify-between items-center'>
               <div className='flex items-center gap-2'>
                 <FaPhoneAlt />
-                <p>+998 88 550 44 44</p>
-                <MdOutlineEmail className='ml-5' />
-                <p>abdullohkurbonov2008@gmail.com</p>
+                <p>+998 88 198 00 09</p>
+                <MdOutlineEmail className='ml-5 hidden md:block' />
+                <p className='hidden md:block'>abdullohkurbonov2008@gmail.com</p>
               </div>
-              <p>Uzbekcha</p>
+              <p className='hidden md:block'>Uzbekcha</p>
             </div>
           </div>
           <nav className='flex justify-between items-center max-w-[1200px] mx-auto pt-3'>
             <Image src={"/logo.png"} alt={"Web Site Logo"} width={200} height={200} />
-            <ul className='flex items-center space-x-5'>
+            <ul className='hidden md:flex items-center space-x-5'>
               {data.map((item, idx) => (
                 <li key={idx} className='flex items-center space-x-1'>
                   <p className='uppercase text-md cursor-pointer font-semibold'>{item.label}</p>
@@ -105,22 +112,49 @@ const MainPage = () => {
                 </li>
               ))}
             </ul>
-            <button className='bg-[#fca311] py-3 px-5 rounded-full uppercase'>Murojat qoldirish</button>
+
+            <div className="md:hidden flex items-center">
+              <button onClick={toggleMenu} className="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+
+            <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute top-0 left-0 w-full h-screen bg-gray-900 bg-opacity-80 z-50`}>
+              <div className="flex justify-end p-5">
+                <button onClick={toggleMenu} className="text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <ul className="flex flex-col items-center space-y-6 mt-20">
+                {data.map((item, idx) => (
+                  <li key={idx} className='flex items-center space-x-1'>
+                    <p className='uppercase text-md cursor-pointer font-semibold'>{item.label}</p>
+                    <item.icon />
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <button className='bg-[#fca311] py-3 px-5 rounded-full uppercase hidden md:block'>Murojat qoldirish</button>
           </nav>
         </header>
         <div className='max-w-[1200px] mx-auto flex items-center justify-between text-white'>
-          <div className='flex flex-col items-start space-y-5 w-2/3'>
-            <h1 className='text-5xl font-bold'>Dunyodagi 1-raqamli sayohat joyiga xush kelibsiz</h1>
-            <p className='text-xl font-bold'>Biz sizga unutilmas sayohatni tashkul qilamiz</p>
+          <div className='flex flex-col items-start space-y-5 w-full md:w-2/3'>
+            <h1 className='text-3xl md:text-5xl font-bold'>Dunyodagi 1-raqamli sayohat joyiga xush kelibsiz</h1>
+            <p className='text-lg md:text-xl font-bold'>Biz sizga unutilmas sayohatni tashkul qilamiz</p>
             <button className='border rounded-full px-10 py-2'>Batafsil</button>
           </div>
-          <Image src={'https://mandarin-tour.uz/wp-content/uploads/2022/01/slider-man.webp'} alt={"man image"} width={300} height={200} />
+          <Image src={'https://mandarin-tour.uz/wp-content/uploads/2022/01/slider-man.webp'} alt={"man image"} width={300} height={200} className='hidden md:block' />
         </div>
       </main>
 
       <div className='bg-gray-800 relative h-[340px]'>
-        <div className="w-[1200px] absolute left-[50%] translate-x-[-50%] top-[-20%] z-50 bg-gray-900 shadow-lg flex space-x-10 rounded-2xl p-8">
-          <div className="w-1/2 grid grid-cols-2 gap-5">
+        <div className="w-full md:w-[1200px] absolute left-[50%] translate-x-[-50%] top-[-20%] z-50 bg-gray-900 shadow-lg flex flex-col md:flex-row space-x-10 rounded-2xl p-8">
+          <div className="w-full md:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-5">
             {countryes.map((item, idx) => (
               <div key={idx} className="border-b-[1px] border-gray-300 pb-2">
                 <p className="text-gray-200 text-center hover:text-[#fca311] cursor-pointer transition-all font-bold">
@@ -129,7 +163,7 @@ const MainPage = () => {
               </div>
             ))}
           </div>
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             <h2 className="text-xl font-bold text-white">Европа</h2>
             <p className="text-gray-400 mt-3 leading-relaxed">
               Европа — одна из самых маленьких частей света в Северном полушарии Земли,
@@ -144,9 +178,9 @@ const MainPage = () => {
       </div>
 
       <div className='max-w-[1200px] mx-auto text-center mt-32 text-white'>
-        <h2 className='font-semibold text-5xl mb-3'>Turlar</h2>
+        <h2 className='font-semibold text-3xl md:text-5xl  mt-96 md:mt-0 mb-3'>Turlar</h2>
         <p className='mb-8'>Kuningiz yaxshi utsin</p>
-        <div className='grid grid-cols-3 gap-10'>
+        <div className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10'>
           {turs.map((item, idx) => (
             <div key={idx} style={{
               backgroundImage: `url(${item.img})`,
@@ -160,19 +194,24 @@ const MainPage = () => {
       </div>
 
       <div className='bg-gray-800 py-32 mt-24'>
-        <div className='max-w-[1200px] mx-auto flex flex-col space-y-10 text-white'>
-          <h2 className='text-center text-4xl font-bold'>Kompaniya haqida</h2>
-          <div className='flex'>
-            <p>So&apos;nggi paytlarda O&apos;zbekiston aholisi orasida sifatli tashkil etilgan dam olishga bo&apos;lgan talab sezilarli darajada oshdi. Shu munosabat bilan turli turistik takliflar soni ortdi. Turli xil turlarda adashib qolmaslik uchun turli mamlakatlarda dam olishni tashkil qilish xususiyatlari haqida dolzarb ma&apos;lumotlarga ega bo&apos;lish kerak. Individual va guruhli dam olish uchun sayyohlik agentligimiz har qanday murakkablik darajasidagi sayohatlarni tashkil etishda tajribali mutaxassislarni ish bilan ta&apos;minlaydi. Biz qulay shartlarda taqdim etiladigan yuqori sifatli sayohat xizmatlarining to&apos;liq to&apos;plamini taklif etamiz. Biz sizga nafaqat sayohatingizning muvaffaqiyatli tashkil etilishiga ishonch, balki unutilmas va maroqli dam olishni ham beramiz. Bizga to&apos;liq ishonishingiz mumkin!</p>
-            <Image src={'https://mandarin-tour.uz/wp-content/uploads/2022/01/about.webp'} alt={"About company"} width={600} height={400} />
+        <div className='max-w-[1200px] mx-auto flex flex-col md:flex-row items-center space-y-10 md:space-y-0 text-white'>
+          <div className='flex-1'>
+            <h2 className='text-center text-4xl font-bold mb-6 md:text-left'>Kompaniya haqida</h2>
+            <p className='text-lg'>
+              So&apos;nggi paytlarda O&apos;zbekiston aholisi orasida sifatli tashkil etilgan dam olishga bo&apos;lgan talab sezilarli darajada oshdi. Shu munosabat bilan turli turistik takliflar soni ortdi. Turli xil turlarda adashib qolmaslik uchun turli mamlakatlarda dam olishni tashkil qilish xususiyatlari haqida dolzarb ma&apos;lumotlarga ega bo&apos;lish kerak. Individual va guruhli dam olish uchun sayyohlik agentligimiz har qanday murakkablik darajasidagi sayohatlarni tashkil etishda tajribali mutaxassislarni ish bilan ta&apos;minlaydi. Biz qulay shartlarda taqdim etiladigan yuqori sifatli sayohat xizmatlarining to&apos;liq to&apos;plamini taklif etamiz. Biz sizga nafaqat sayohatingizning muvaffaqiyatli tashkil etilishiga ishonch, balki unutilmas va maroqli dam olishni ham beramiz. Bizga to&apos;liq ishonishingiz mumkin!
+            </p>
+          </div>
+          <div className='flex-1'>
+            <Image src={'https://mandarin-tour.uz/wp-content/uploads/2022/01/about.webp'} alt={"About company"} width={600} height={400} className='max-w-[200px] sm:max-w-[500px] mx-auto md:mx-0' />
           </div>
         </div>
       </div>
 
+
       <div className='max-w-[1200px] mx-auto text-center mt-24 text-white'>
-        <h2 className='font-semibold text-5xl mb-3'>Mashhur Joylar</h2>
+        <h2 className='font-semibold text-3xl md:text-5xl mb-3'>Mashhur Joylar</h2>
         <p className='mb-8'>Biz sizga faqat eng yaxshisini tavsiya beramiz</p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 p-4 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 p-4 place-items-center">
           {turs.map((tour, index) => (
             <div key={index} className="bg-gray-700 rounded-lg overflow-hidden shadow-lg">
               <Image src={tour.img} alt={`Tour Image ${index + 1}`} width={400} height={500} className="w-full h-48 object-cover" />
@@ -186,69 +225,62 @@ const MainPage = () => {
 
       <div className='bg-gray-800 py-16 mt-24 text-white'>
         <div className='max-w-[1200px] mx-auto text-center'>
-          <h2 className='font-semibold text-5xl mb-3'>Sharhlar</h2>
+          <h2 className='font-semibold text-3xl md:text-5xl mb-3'>Sharhlar</h2>
           <p className='mb-8 text-white'>Bizning mijoslarimizni</p>
-          <div className='flex space-x-10'>
-            <div className="flex flex-col w-1/2 items-start text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer">
+          <div className='flex flex-col items-center md:flex-row md:space-x-10 space-y-8 md:space-y-0'>
+            <div className="flex flex-col w-full md:w-1/2 items-start text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer">
               <p className="tracking-wider text-white">
-                Biz kichkina o&apos;g&apos;limiz (11 oylik) bilan dam olgandik, juda katta rahmat menejer Yuliyaga ajoyib turni tanlagani uchun. Yana bir katta rahmat sabr-toqatini ko&apos;rsatgani uchun. E&apos;tibor bering, men juda asabiy mijozman, xavotirchi, dastlab vizalar haqida juda ko&apos;p tashvishlandim va har soatda telefon qilib, so&apos;rab turardim, so&apos;ngra aeroportda samolyotga chiqishni kutayotganda, qaysi samolyotda uchayotganimizni, Airbus yoki Boeing ekanligini bilishim kerak edi, agar Airbus bo&apos;lsa, qaysi biri?) (yana bir soat kutishni xohlamadim, shuning uchun tezda aniqlashim kerak edi). Yuliya hech qachon e&apos;tiborsiz qoldirmadi, bunday oddiy so&apos;rovlarni tezda hal qildi va meni tinchlantirdi. Dam olish juda muvaffaqiyatli bo&apos;ldi. Kelgusi yilni aynan shu joyga borishni xohlaymiz. Va albatta, faqat sizlar orqali) Men, aslida, hali ham uni qiynayapman, agar qiziqarli biror narsa bo&apos;lsa. Ko&apos;pincha juda ajoyib takliflar bor. Sizning kompaniyangizga va bunday bilimdon va mehribon menejerya uchraganim uchun juda xursandman.
+                Biz kichkina o&apos;g&apos;limiz (11 oylik) bilan dam olgandik, juda katta rahmat menejer Yuliyaga ajoyib turni tanlagani uchun. Yana bir katta rahmat sabr-toqatini ko&apos;rsatgani uchun...
               </p>
               <p className="text-white">Mubina</p>
             </div>
 
-            <div className="flex flex-col items-start w-1/2 text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer">
+            <div className="flex flex-col w-full md:w-1/2 items-start text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6">
               <p className="tracking-wider text-white">
-                O&apos;tgan yilda o&apos;g&apos;limiz bilan dam olishga borish niyatida bo&apos;lib, kompaniyangiz orqali yo&apos;l oldik. Menejer Yuliyaning yordami haqiqatan ham ajoyib edi! Har bir e&apos;tibor berib, to&apos;g&apos;ri tanlov qilishda yordam berdi. Dastlab vizalar bilan bog&apos;liq savollarimni ko&apos;plab marta berdim, keyin esa aeroportda samolyotimizni aniqlash uchun tinchlik topolmadim, lekin Yuliyaning sabri va yordami hech qachon kamaymadi. U har doim qo&apos;llab-quvvatladi va har bir so&apos;rovimga tezda javob berdi. Dam olish juda maroqli bo&aposldi, kelgusi yilni yana shu joyda o&apos;tkazishni rejalashtirganmiz. Yuliyaga va kompaniyangizga katta rahmat! Bunday ajoyib xizmat ko&apos;rsatganingiz uchun minnatdorman, albatta, kelajakda faqat sizlar orqali sayohat qilishni istayman.
+                O&apos;tgan yilda o&apos;g&apos;limiz bilan dam olishga borish niyatida bo&apos;lib, kompaniyangiz orqali yo&apos;l oldik...
               </p>
               <p className="text-white">Shohjahon Holmuhamedov</p>
             </div>
-
           </div>
         </div>
       </div>
 
-      <div className='max-w-[1200px] mx-auto text-center my-32'>
-        <h2 className='font-semibold text-5xl mb-3 text-white'>Biz bilan boglanish</h2>
-        <p className='mb-8 text-white'>Biga malumotlaringizni qoldiring</p>
-        <form className='flex flex-col items-center space-y-5'>
-          <input type="text" placeholder='Sizning toliq ismingiz' className='w-full py-2 px-3 border border-gray-600 outline-none hover:border-orange-500 transition-all text-white bg-gray-800' />
-          <div className='flex space-x-10 w-full'>
-            <input type="text" placeholder='Telefon raqamingz' className='py-2 px-3 border border-gray-600 outline-none hover:border-orange-500 transition-all w-1/2 text-white bg-gray-800' />
-            <input type="text" placeholder='Email manzilingiz' className=' py-2 px-3 border border-gray-600 outline-none hover:border-orange-500 transition-all w-1/2 text-white bg-gray-800' />
-          </div>
-          <input type="text" placeholder='Mavzu' className='w-full py-2 px-3 border border-gray-600 outline-none hover:border-orange-500 transition-all text-white bg-gray-800' />
-          <textarea placeholder='Sizning Xabaringiz' className='w-full py-2 px-3 border border-gray-600 outline-none hover:border-orange-500 transition-all text-white bg-gray-800'></textarea>
-          <button className='py-3 px-5 border  border-[#fca311] inline text-white bg-[#fca311]'>Jonatish</button>
-        </form>
-      </div>
-
-      <div className='bg-gray-800 py-16'>
-        <div className='max-w-[1200px] mx-auto text-center mt-24'>
-          <h2 className='font-semibold text-5xl  mb-16 text-white'>Yangiliklar</h2>
-          <div>
-            <div className='flex space-x-10'>
-              <div className='flex flex-col w-1/2 items-start text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer'>
-                <Image src={'https://mandarin-tour.uz/wp-content/uploads/2022/04/photo_2022-04-01_15-22-55.webp'} alt={"News Image"} width={500} height={500} />
-                <p className='text-3xl font-bold text-white'>Oylaviy dam olishga nima yetsin</p>
-                <p className='text-white'>Ohirgi payt oylangiz bilan qancha vaht otqizganingizni hech oylab kordingizmi...</p>
-              </div>
-              <div className='flex flex-col items-start w-1/2 text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer'>
-                <Image src={'https://mandarin-tour.uz/wp-content/uploads/2022/04/photo_2022-04-06_18-11-30.webp'} alt={"News Image"} width={500} height={500} />
-                <p className='text-3xl font-bold text-white'>Mandarin tourdan Ramazon aksiyalari</p>
-                <p className='text-white'>Sayohat uchun yigib qoygan pularingizni ishlatish vohti keldi</p>
-              </div>
+      <footer className='max-w-[1200px] mx-auto py-16 text-white flex flex-col md:flex-row justify-between'>
+        <div className='w-full md:w-1/3'>
+          <p className='text-2xl font-bold mb-8'>Kontakt malumotlar</p>
+          <div className='flex flex-col space-y-6'>
+            <div className='flex items-center space-x-2'>
+              <FaLocationDot size={20} />
+              <p>Uzbekistan Tashkent</p>
+            </div>
+            <div className='flex items-center space-x-2'>
+              <FaPhoneAlt size={20} />
+              <p>+998 88 198 00 09</p>
+            </div>
+            <div className='flex items-center space-x-2'>
+              <MdEmail size={20} />
+              <p>abdullohkurbonov2008@gmail.com</p>
             </div>
           </div>
         </div>
-      </div>
-
-      <footer className='max-w-[1200px] mx-auto bg-gray-900'>
-        <table></table>
+        <div className='w-full md:w-1/3'>
+          <p className='text-2xl font-bold mb-8'>Foydali havolalar</p>
+          <ul className='space-y-3'>
+            {data.map((item, idx) => (
+              <li key={idx} className='flex items-center space-x-2'>
+                <p>{item.label}</p>
+                <item.icon />
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className='w-full md:w-1/3'>
+          <p className='text-2xl font-bold mb-8'>Bizning Manzil</p>
+          <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="300" style={{ border: 0 }} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </footer>
-      <div className='h-[1000px]'></div>
     </div>
-
   )
 }
 
-export default MainPage
+export default MainPage;
