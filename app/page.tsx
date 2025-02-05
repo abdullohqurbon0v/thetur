@@ -91,17 +91,6 @@ const MainPage = () => {
     <div>
       <main className='main bg-gray-900'>
         <header className='bg-[rgba(0,0,0,0.6)] text-white backdrop-blur-sm'>
-          <div className='border-b-2 border-white'>
-            <div className='max-w-[1200px] mx-auto flex py-2 justify-between items-center'>
-              <div className='flex items-center gap-2'>
-                <FaPhoneAlt />
-                <p>+998 88 198 00 09</p>
-                <MdOutlineEmail className='ml-5 hidden md:block' />
-                <p className='hidden md:block'>abdullohkurbonov2008@gmail.com</p>
-              </div>
-              <p className='hidden md:block'>Uzbekcha</p>
-            </div>
-          </div>
           <nav className='flex justify-between items-center max-w-[1200px] mx-auto pt-3'>
             <Image src={"/logo.png"} alt={"Web Site Logo"} width={200} height={200} />
             <ul className='hidden md:flex items-center space-x-5'>
@@ -178,7 +167,7 @@ const MainPage = () => {
       </div>
 
       <div className='max-w-[1200px] mx-auto text-center mt-32 text-white'>
-        <h2 className='font-semibold text-3xl md:text-5xl  mt-96 md:mt-0 mb-3'>Turlar</h2>
+        <h2 className='font-semibold text-3xl md:text-5xl  mt-[500px] md:mt-0 mb-3'>Turlar</h2>
         <p className='mb-8'>Kuningiz yaxshi utsin</p>
         <div className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10'>
           {turs.map((item, idx) => (
