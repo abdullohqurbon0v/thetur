@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react'
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
@@ -106,7 +105,7 @@ const MainPage = () => {
                 </li>
               ))}
             </ul>
-            <button className='bg-orange-700 py-3 px-5 rounded-full uppercase'>Murojat qoldirish</button>
+            <button className='bg-[#fca311] py-3 px-5 rounded-full uppercase'>Murojat qoldirish</button>
           </nav>
         </header>
         <div className='max-w-[1200px] mx-auto flex items-center justify-between text-white'>
@@ -124,7 +123,7 @@ const MainPage = () => {
           <div className="w-1/2 grid grid-cols-2 gap-5">
             {countryes.map((item, idx) => (
               <div key={idx} className="border-b-[1px] border-gray-300 pb-2">
-                <p className="text-gray-200 text-center hover:text-red-500 cursor-pointer transition-all font-bold">
+                <p className="text-gray-200 text-center hover:text-[#fca311] cursor-pointer transition-all font-bold">
                   {item}
                 </p>
               </div>
@@ -137,7 +136,7 @@ const MainPage = () => {
               омываемая Атлантическим океаном на западе, Северным Ледовитым океаном на
               севере и имеющая площадь около 10 млн км².
             </p>
-            <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 mt-5 font-semibold shadow-md transition duration-200">
+            <button className="bg-[#fca311] hover:bg-[#f7ae39] text-white px-6 py-3 mt-5 font-semibold shadow-md transition duration-200">
               Смотреть видео
             </button>
           </div>
@@ -164,7 +163,7 @@ const MainPage = () => {
         <div className='max-w-[1200px] mx-auto flex flex-col space-y-10 text-white'>
           <h2 className='text-center text-4xl font-bold'>Kompaniya haqida</h2>
           <div className='flex'>
-            <p>So'nggi paytlarda O'zbekiston aholisi orasida sifatli tashkil etilgan dam olishga bo'lgan talab sezilarli darajada oshdi. Shu munosabat bilan turli turistik takliflar soni ortdi. Turli xil turlarda adashib qolmaslik uchun turli mamlakatlarda dam olishni tashkil qilish xususiyatlari haqida dolzarb ma'lumotlarga ega bo'lish kerak. Individual va guruhli dam olish uchun sayyohlik agentligimiz har qanday murakkablik darajasidagi sayohatlarni tashkil etishda tajribali mutaxassislarni ish bilan ta'minlaydi. Biz qulay shartlarda taqdim etiladigan yuqori sifatli sayohat xizmatlarining to'liq to'plamini taklif etamiz. Biz sizga nafaqat sayohatingizning muvaffaqiyatli tashkil etilishiga ishonch, balki unutilmas va maroqli dam olishni ham beramiz. Bizga to'liq ishonishingiz mumkin!</p>
+            <p>So&apos;nggi paytlarda O&apos;zbekiston aholisi orasida sifatli tashkil etilgan dam olishga bo&apos;lgan talab sezilarli darajada oshdi. Shu munosabat bilan turli turistik takliflar soni ortdi. Turli xil turlarda adashib qolmaslik uchun turli mamlakatlarda dam olishni tashkil qilish xususiyatlari haqida dolzarb ma&apos;lumotlarga ega bo&apos;lish kerak. Individual va guruhli dam olish uchun sayyohlik agentligimiz har qanday murakkablik darajasidagi sayohatlarni tashkil etishda tajribali mutaxassislarni ish bilan ta&apos;minlaydi. Biz qulay shartlarda taqdim etiladigan yuqori sifatli sayohat xizmatlarining to&apos;liq to&apos;plamini taklif etamiz. Biz sizga nafaqat sayohatingizning muvaffaqiyatli tashkil etilishiga ishonch, balki unutilmas va maroqli dam olishni ham beramiz. Bizga to&apos;liq ishonishingiz mumkin!</p>
             <Image src={'https://mandarin-tour.uz/wp-content/uploads/2022/01/about.webp'} alt={"About company"} width={600} height={400} />
           </div>
         </div>
@@ -173,10 +172,10 @@ const MainPage = () => {
       <div className='max-w-[1200px] mx-auto text-center mt-24 text-white'>
         <h2 className='font-semibold text-5xl mb-3'>Mashhur Joylar</h2>
         <p className='mb-8'>Biz sizga faqat eng yaxshisini tavsiya beramiz</p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 bg-gray-900 p-4 place-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 p-4 place-items-center">
           {turs.map((tour, index) => (
             <div key={index} className="bg-gray-700 rounded-lg overflow-hidden shadow-lg">
-              <img src={tour.img} alt={`Tour Image ${index + 1}`} className="w-full h-48 object-cover" />
+              <Image src={tour.img} alt={`Tour Image ${index + 1}`} width={400} height={500} className="w-full h-48 object-cover" />
               <div className="p-4">
                 <p className="text-lg text-white">{tour.label}</p>
               </div>
@@ -190,14 +189,20 @@ const MainPage = () => {
           <h2 className='font-semibold text-5xl mb-3'>Sharhlar</h2>
           <p className='mb-8 text-white'>Bizning mijoslarimizni</p>
           <div className='flex space-x-10'>
-            <div className='flex flex-col w-1/2 items-start text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer'>
-              <p className='tracking-wider text-white'>Biz kichkina o'g'limiz (11 oylik) bilan dam olgandik, juda katta rahmat menejer Yuliyaga ajoyib turni tanlagani uchun. Yana bir katta rahmat sabr-toqatini ko'rsatgani uchun. E'tibor bering, men juda asabiy mijozman, xavotirchi, dastlab vizalar haqida juda ko'p tashvishlandim va har soatda telefon qilib, so'rab turardim, so'ngra aeroportda samolyotga chiqishni kutayotganda, qaysi samolyotda uchayotganimizni, Airbus yoki Boeing ekanligini bilishim kerak edi, agar Airbus bo'lsa, qaysi biri?) (yana bir soat kutishni xohlamadim, shuning uchun tezda aniqlashim kerak edi). Yuliya hech qachon e'tiborsiz qoldirmadi, bunday oddiy so'rovlarni tezda hal qildi va meni tinchlantirdi. Dam olish juda muvaffaqiyatli bo'ldi. Kelgusi yilni aynan shu joyga borishni xohlaymiz. Va albatta, faqat sizlar orqali) Men, aslida, hali ham uni qiynayapman, agar qiziqarli biror narsa bo'lsa. Ko'pincha juda ajoyib takliflar bor. Sizning kompaniyangizga va bunday bilimdon va mehribon menejerya uchraganim uchun juda xursandman.</p>
-              <p className='text-white'>Mubina</p>
+            <div className="flex flex-col w-1/2 items-start text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer">
+              <p className="tracking-wider text-white">
+                Biz kichkina o&apos;g&apos;limiz (11 oylik) bilan dam olgandik, juda katta rahmat menejer Yuliyaga ajoyib turni tanlagani uchun. Yana bir katta rahmat sabr-toqatini ko&apos;rsatgani uchun. E&apos;tibor bering, men juda asabiy mijozman, xavotirchi, dastlab vizalar haqida juda ko&apos;p tashvishlandim va har soatda telefon qilib, so&apos;rab turardim, so&apos;ngra aeroportda samolyotga chiqishni kutayotganda, qaysi samolyotda uchayotganimizni, Airbus yoki Boeing ekanligini bilishim kerak edi, agar Airbus bo&apos;lsa, qaysi biri?) (yana bir soat kutishni xohlamadim, shuning uchun tezda aniqlashim kerak edi). Yuliya hech qachon e&apos;tiborsiz qoldirmadi, bunday oddiy so&apos;rovlarni tezda hal qildi va meni tinchlantirdi. Dam olish juda muvaffaqiyatli bo&apos;ldi. Kelgusi yilni aynan shu joyga borishni xohlaymiz. Va albatta, faqat sizlar orqali) Men, aslida, hali ham uni qiynayapman, agar qiziqarli biror narsa bo&apos;lsa. Ko&apos;pincha juda ajoyib takliflar bor. Sizning kompaniyangizga va bunday bilimdon va mehribon menejerya uchraganim uchun juda xursandman.
+              </p>
+              <p className="text-white">Mubina</p>
             </div>
-            <div className='flex flex-col items-start w-1/2 text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer'>
-              <p className='tracking-wider text-white'>O'tgan yilda o'g'limiz bilan dam olishga borish niyatida bo'lib, kompaniyangiz orqali yo'l oldik. Menejer Yuliyaning yordami haqiqatan ham ajoyib edi! Har bir detalga e'tibor berib, to'g'ri tanlov qilishda yordam berdi. Dastlab vizalar bilan bog'liq savollarimni ko'plab marta berdim, keyin esa aeroportda samolyotimizni aniqlash uchun tinchlik topolmadim, lekin Yuliyaning sabri va yordami hech qachon kamaymadi. U har doim qo'llab-quvvatladi va har bir so'rovimga tezda javob berdi. Dam olish juda maroqli bo'ldi, kelgusi yilni yana shu joyda o'tkazishni rejalashtirganmiz. Yuliyaga va kompaniyangizga katta rahmat! Bunday ajoyib xizmat ko'rsatganingiz uchun minnatdorman, albatta, kelajakda ham faqat sizlar orqali sayohat qilishni istayman.</p>
-              <p className='text-white'>Shohjahon Holmuhamedov</p>
+
+            <div className="flex flex-col items-start w-1/2 text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer">
+              <p className="tracking-wider text-white">
+                O&apos;tgan yilda o&apos;g&apos;limiz bilan dam olishga borish niyatida bo&apos;lib, kompaniyangiz orqali yo&apos;l oldik. Menejer Yuliyaning yordami haqiqatan ham ajoyib edi! Har bir e&apos;tibor berib, to&apos;g&apos;ri tanlov qilishda yordam berdi. Dastlab vizalar bilan bog&apos;liq savollarimni ko&apos;plab marta berdim, keyin esa aeroportda samolyotimizni aniqlash uchun tinchlik topolmadim, lekin Yuliyaning sabri va yordami hech qachon kamaymadi. U har doim qo&apos;llab-quvvatladi va har bir so&apos;rovimga tezda javob berdi. Dam olish juda maroqli bo&aposldi, kelgusi yilni yana shu joyda o&apos;tkazishni rejalashtirganmiz. Yuliyaga va kompaniyangizga katta rahmat! Bunday ajoyib xizmat ko&apos;rsatganingiz uchun minnatdorman, albatta, kelajakda faqat sizlar orqali sayohat qilishni istayman.
+              </p>
+              <p className="text-white">Shohjahon Holmuhamedov</p>
             </div>
+
           </div>
         </div>
       </div>
@@ -213,7 +218,7 @@ const MainPage = () => {
           </div>
           <input type="text" placeholder='Mavzu' className='w-full py-2 px-3 border border-gray-600 outline-none hover:border-orange-500 transition-all text-white bg-gray-800' />
           <textarea placeholder='Sizning Xabaringiz' className='w-full py-2 px-3 border border-gray-600 outline-none hover:border-orange-500 transition-all text-white bg-gray-800'></textarea>
-          <button className='py-3 px-5 border border-orange-600 inline text-white bg-gray-700'>Jonatish</button>
+          <button className='py-3 px-5 border  border-[#fca311] inline text-white bg-[#fca311]'>Jonatish</button>
         </form>
       </div>
 
