@@ -120,7 +120,7 @@ const MainPage = () => {
         </div>
       </main>
 
-      <div className='bg-slate-200 relative h-[340px]'>
+      <div className='bg-slate-100 relative h-[340px]'>
         <div className="w-[1200px] asolute-country-data left-[50%] translate-x-[-50%] top-[-20%] z-50 bg-white shadow-lg flex space-x-10 rounded-2xl p-8">
           <div className="w-1/2 grid grid-cols-2 gap-5">
             {countryes.map((item, idx) => (
@@ -161,11 +161,13 @@ const MainPage = () => {
         </div>
       </div>
 
-      <div className='bg-slate-200 py-32 mt-24'>
+      <div className='bg-slate-100 py-32 mt-24'>
         <div className='max-w-[1200px] mx-auto flex flex-col space-y-10'>
           <h2 className='text-center text-4xl font-bold'>Kompaniya haqida</h2>
           <div className='flex'>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi natus enim soluta consectetur impedit illum et pariatur fugiat, odit quis iste vitae dolorum illo neque aut tenetur eum totam doloremque tempore voluptatum temporibus eveniet vero similique aliquam. A alias ea corporis ratione, animi architecto dolor eaque sint magni repellendus doloribus laboriosam ducimus asperiores esse accusamus nostrum modi omnis nihil quam ad cum veritatis doloremque assumenda. Maiores sapiente ut laboriosam laudantium magni, maxime voluptates ex quaerat tempora necessitatibus doloribus ea fugiat nobis inventore rerum? Veritatis blanditiis iusto cumque, sapiente similique maxime corrupti mollitia quia error expedita! Porro numquam vel quia dolor!</p>
+            <p>So'nggi paytlarda O'zbekiston aholisi orasida sifatli tashkil etilgan dam olishga bo'lgan talab sezilarli darajada oshdi. Shu munosabat bilan turli turistik takliflar soni ortdi.
+              Turli xil turlarda adashib qolmaslik uchun turli mamlakatlarda dam olishni tashkil qilish xususiyatlari haqida dolzarb ma'lumotlarga ega bo'lish kerak. Individual va guruhli dam olish uchun sayyohlik agentligimiz har qanday murakkablik darajasidagi sayohatlarni tashkil etishda tajribali mutaxassislarni ish bilan ta'minlaydi.
+              Biz qulay shartlarda taqdim etiladigan yuqori sifatli sayohat xizmatlarining to'liq to'plamini taklif etamiz. Biz sizga nafaqat sayohatingizning muvaffaqiyatli tashkil etilishiga ishonch, balki unutilmas va maroqli dam olishni ham beramiz. Bizga to'liq ishonishingiz mumkin!</p>
             <Image src={'https://mandarin-tour.uz/wp-content/uploads/2022/01/about.webp'} alt={"About company"} width={600} height={400} />
           </div>
         </div>
@@ -184,14 +186,60 @@ const MainPage = () => {
             </div>
           ))}
         </div>
-
-
-
-
       </div>
-      <div className='h-[1000px]'></div>
+      <div className='bg-slate-100 py-16 mt-24'>
+        <div className='max-w-[1200px] mx-auto text-center'>
+          <h2 className='font-semibold text-5xl mb-3'>Sharhlar</h2>
+          <p className='mb-8'>Bizning mijoslarimizni</p>
+          <div className='flex space-x-10'>
+            <div className='flex flex-col w-1/2 items-start text-start bg-white rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer'>
+              <p className='tracking-wider'>Biz kichkina o'g'limiz (11 oylik) bilan dam olgandik, juda katta rahmat menejer Yuliyaga ajoyib turni tanlagani uchun. Yana bir katta rahmat sabr-toqatini ko'rsatgani uchun. E'tibor bering, men juda asabiy mijozman, xavotirchi, dastlab vizalar haqida juda ko'p tashvishlandim va har soatda telefon qilib, so'rab turardim, so'ngra aeroportda samolyotga chiqishni kutayotganda, qaysi samolyotda uchayotganimizni, Airbus yoki Boeing ekanligini bilishim kerak edi, agar Airbus bo'lsa, qaysi biri?) (yana bir soat kutishni xohlamadim, shuning uchun tezda aniqlashim kerak edi). Yuliya hech qachon e'tiborsiz qoldirmadi, bunday oddiy so'rovlarni tezda hal qildi va meni tinchlantirdi. Dam olish juda muvaffaqiyatli bo'ldi. Kelgusi yilni aynan shu joyga borishni xohlaymiz. Va albatta, faqat sizlar orqali) Men, aslida, hali ham uni qiynayapman, agar qiziqarli biror narsa bo'lsa. Ko'pincha juda ajoyib takliflar bor. Sizning kompaniyangizga va bunday bilimdon va mehribon menejerya uchraganim uchun juda xursandman.</p>
+              <p>Mubina</p>
+            </div>
+            <div className='flex flex-col items-start w-1/2 text-start bg-white rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer'>
+              <p className='tracking-wider'>O'tgan yilda o'g'limiz bilan dam olishga borish niyatida bo'lib, kompaniyangiz orqali yo'l oldik. Menejer Yuliyaning yordami haqiqatan ham ajoyib edi! Har bir detalga e'tibor berib, to'g'ri tanlov qilishda yordam berdi. Dastlab vizalar bilan bog'liq savollarimni ko'plab marta berdim, keyin esa aeroportda samolyotimizni aniqlash uchun tinchlik topolmadim, lekin Yuliyaning sabri va yordami hech qachon kamaymadi. U har doim qo'llab-quvvatladi va har bir so'rovimga tezda javob berdi. Dam olish juda maroqli bo'ldi, kelgusi yilni yana shu joyda o'tkazishni rejalashtirganmiz. Yuliyaga va kompaniyangizga katta rahmat! Bunday ajoyib xizmat ko'rsatganingiz uchun minnatdorman, albatta, kelajakda ham faqat sizlar orqali sayohat qilishni istayman.</p>
+              <p>Shohjahon Holmuhamedov</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <div>
+
+      <div className='bg-slate-100 py-16 mt-24'>
+        <div className='max-w-[1200px] mx-auto text-center'>
+          <h2 className='font-semibold text-5xl mb-3'>Biz bilan boglanish</h2>
+          <p className='mb-8'>Biga malumotlaringizni qoldiring</p>
+          <form className='flex flex-col items-center space-y-5'>
+            <input type="text" placeholder='Sizning toliq ismingiz' className='w-full py-2 px-3 border border-black outline-none hover:border-orange-500 transition-all' />
+            <div className='flex space-x-10 w-full'>
+              <input type="text" placeholder='Telefon raqamingz' className='py-2 px-3 border border-black outline-none hover:border-orange-500 transition-all w-1/2' />
+              <input type="text" placeholder='Email manzilingiz' className=' py-2 px-3 border border-black outline-none hover:border-orange-500 transition-all  w-1/2' />
+            </div>
+            <input type="text" placeholder='Mavzu' className='w-full py-2 px-3 border border-black outline-none hover:border-orange-500 transition-all' />
+            <textarea placeholder='Sizning Xabaringiz' className='w-full py-2 px-3 border border-black outline-none hover:border-orange-500 transition-all'></textarea>
+            <button className='py-3 px-5 border border-orange-600 inline'>Jonatish</button>
+          </form>
+        </div>
+      </div>
+
+      {/* // https://mandarin-tour.uz/wp-content/uploads/2022/04/photo_2022-04-06_18-11-30.webp   https://mandarin-tour.uz/wp-content/uploads/2022/04/photo_2022-04-01_15-22-55.webp*/}
+      <div className='max-w-[1200px] mx-auto text-center mt-24'>
+        <h2 className='font-semibold text-5xl mb-3'>Yangiliklar</h2>
+        <div>
+          <div className='flex space-x-10'>
+            <div className='flex flex-col w-1/2 items-start text-start bg-white rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer'>
+              <Image src={'https://mandarin-tour.uz/wp-content/uploads/2022/04/photo_2022-04-01_15-22-55.webp'} alt={"News Image"} width={500} height={500} />
+              <p className='text-3xl font-bold'>Oylaviy dam olishga nima yetsin</p>
+              <p>Ohirgi payt oylangiz bilan qancha vaht otqizganingizni hech oylab kordingizmi...</p>
+            </div>
+            <div className='flex flex-col items-start w-1/2 text-start bg-white rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer'>
+              <Image src={'https://mandarin-tour.uz/wp-content/uploads/2022/04/photo_2022-04-06_18-11-30.webp'} alt={"News Image"} width={500} height={500} />
+              <p>Shohjahon Holmuhamedov</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='h-[1000px]'>
       </div>
     </div >
   )
