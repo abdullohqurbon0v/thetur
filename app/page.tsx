@@ -132,7 +132,7 @@ const MainPage = () => {
           </nav>
         </header>
         <div className='max-w-[1200px] mx-auto flex items-center justify-between text-white'>
-          <div className='flex flex-col items-start space-y-5 w-full md:w-2/3'>
+          <div className='flex flex-col items-start justify-center h-full space-y-5 w-full md:w-2/3 mt-24 md:mt-0'>
             <h1 className='text-3xl md:text-5xl font-bold'>Dunyodagi 1-raqamli sayohat joyiga xush kelibsiz</h1>
             <p className='text-lg md:text-xl font-bold'>Biz sizga unutilmas sayohatni tashkul qilamiz</p>
             <button className='border rounded-full px-10 py-2'>Batafsil</button>
@@ -236,24 +236,20 @@ const MainPage = () => {
 
       <footer className='max-w-[1200px] mx-auto py-16 text-white flex flex-col md:flex-row justify-between'>
         <div className='w-full md:w-1/3'>
-          <p className='text-2xl font-bold mb-8'>Kontakt malumotlar</p>
+          <p className='text-2xl font-bold mt-8 md:mt-0 mb-3 md:mb-8'>Kontakt malumotlar</p>
           <div className='flex flex-col space-y-6'>
             <div className='flex items-center space-x-2'>
               <FaLocationDot size={20} />
               <p>Uzbekistan Tashkent</p>
             </div>
-            <div className='flex items-center space-x-2'>
+            <div className='flex items-center space-x-2 '>
               <FaPhoneAlt size={20} />
               <p>+998 88 198 00 09</p>
-            </div>
-            <div className='flex items-center space-x-2'>
-              <MdEmail size={20} />
-              <p>abdullohkurbonov2008@gmail.com</p>
             </div>
           </div>
         </div>
         <div className='w-full md:w-1/3'>
-          <p className='text-2xl font-bold mb-8'>Foydali havolalar</p>
+          <p className='text-2xl font-bold mt-8 md:mt-0 mb-3 md:mb-8'>Foydali havolalar</p>
           <ul className='space-y-3'>
             {data.map((item, idx) => (
               <li key={idx} className='flex items-center space-x-2'>
@@ -264,7 +260,7 @@ const MainPage = () => {
           </ul>
         </div>
         <div className='w-full md:w-1/3'>
-          <p className='text-2xl font-bold mb-8'>Bizning Manzil</p>
+          <p className='text-2xl font-bold mt-8 md:mt-0 mb-3 md:mb-8'>Bizning Manzil</p>
           <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="300" style={{ border: 0 }} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </footer>
