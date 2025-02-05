@@ -32,23 +32,25 @@ const MainPage = () => {
     },
 
   ]
+
+  //https://mandarin-tour.uz/wp-content/uploads/2022/01/slider-man.webp
   return (
     <div>
-      <div className=''>
-        <header className='bg-[rgba(0,0,0,0.9)] text-white backdrop-blur-sm'>
+      <main className='main'>
+        <header className='bg-[rgba(0,0,0,0.6)] text-white backdrop-blur-sm'>
           <div className='border-b-2 border-white'>
-            <div className='max-w-[1200px] mx-auto flex py-2 justify-between items-center '>
+            <div className='max-w-[1200px] mx-auto flex py-2 justify-between items-center'>
               <div className='flex items-center gap-2'>
                 <FaPhoneAlt />
-                <p >+998 88 550 44 44</p>
+                <p>+998 88 550 44 44</p>
                 <MdOutlineEmail className='ml-5' />
                 <p>abdullohkurbonov2008@gmail.com</p>
               </div>
               <p>Uzbekcha</p>
             </div>
           </div>
-          <nav className='flex justify-between items-center max-w-[1100px] mx-auto'>
-            <Image src={"https://mandarin-tour.uz/wp-content/uploads/2022/01/logo.webp"} alt={"Web Site Logo"} width={100} height={100} />
+          <nav className='flex justify-between items-center max-w-[1200px] mx-auto pt-3'>
+            <Image src={"/logo.png"} alt={"Web Site Logo"} width={200} height={200} />
             <ul className='flex items-center space-x-5'>
               {data.map((item, idx) => (
                 <li key={idx} className='flex items-center space-x-1'>
@@ -57,9 +59,22 @@ const MainPage = () => {
                 </li>
               ))}
             </ul>
-            <button className='bg-orange-700 py-3 px-5 rounded-full uppercase '>Murojat qoldirish</button>
+            <button className='bg-orange-700 py-3 px-5 rounded-full uppercase'>Murojat qoldirish</button>
           </nav>
         </header>
+        <div className='max-w-[1200px] mx-auto flex items-center justify-between text-white'>
+          <div className='flex flex-col items-start space-y-5 w-2/3'>
+            <h1 className='text-5xl font-bold '>Dunyodagi 1-raqamli sayohat joyiga xush kelibsiz
+            </h1>
+            <p className='text-xl font-bold'>Biz sizga unutilmas sayohatni tashkul qilamiz</p>
+            <button className='border rounded-full px-10 py-2'>Batafsil</button>
+          </div>
+          <Image src={'https://mandarin-tour.uz/wp-content/uploads/2022/01/slider-man.webp'} alt={"man image"} width={300} height={200} />
+        </div>
+      </main>
+      <div></div>
+      <div>
+
       </div>
     </div >
   )

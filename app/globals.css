@@ -6,3 +6,25 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+
+.main {
+  position: relative;
+  background-image: url('https://mandarin-tour.uz/wp-content/uploads/2022/01/slider3.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80vh;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
