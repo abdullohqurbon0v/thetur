@@ -219,7 +219,7 @@ const MainPage = () => {
 
       <div className='bg-gray-800 py-16'>
         <div className='max-w-[1200px] mx-auto text-center mt-24'>
-          <h2 className='font-semibold text-5xl mb-3 mb-16 text-white'>Yangiliklar</h2>
+          <h2 className='font-semibold text-5xl  mb-16 text-white'>Yangiliklar</h2>
           <div>
             <div className='flex space-x-10'>
               <div className='flex flex-col w-1/2 items-start text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer'>
