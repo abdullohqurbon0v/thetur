@@ -1,10 +1,10 @@
 'use client'
 
 import Image from 'next/image';
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaUser } from "react-icons/fa";
 import { IoHomeOutline } from "react-icons/io5";
 import { LuPlane } from "react-icons/lu";
-import { MdHomeWork } from "react-icons/md";
+import { MdEmail, MdHomeWork } from "react-icons/md";
 import { FaKaaba } from "react-icons/fa";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
@@ -90,7 +90,7 @@ const MainPage = () => {
     <div>
       <main className='main bg-gray-900'>
         <header className='bg-[rgba(0,0,0,0.6)] text-white backdrop-blur-sm'>
-          <nav className='flex justify-between items-center max-w-[1200px] mx-auto pt-3'>
+          <nav className='flex justify-between items-center max-w-[1500px] mx-auto pt-3'>
             <Image src={"/logo.png"} alt={"Web Site Logo"} width={200} height={200} />
             <ul className='hidden md:flex items-center space-x-5'>
               {data.map((item, idx) => (
@@ -130,7 +130,7 @@ const MainPage = () => {
             <button className='bg-[#fca311] py-3 px-5 rounded-full uppercase hidden md:block'>Murojat qoldirish</button>
           </nav>
         </header>
-        <div className='max-w-[1200px] mx-auto flex items-center justify-between text-white'>
+        <div className='max-w-[1500px] mx-auto flex items-center justify-between text-white'>
           <div className='flex flex-col items-start justify-center h-full space-y-5 w-full md:w-2/3 mt-24 md:mt-0'>
             <h1 className='text-3xl md:text-5xl font-bold'>Dunyodagi 1-raqamli sayohat joyiga xush kelibsiz</h1>
             <p className='text-lg md:text-xl font-bold'>Biz sizga unutilmas sayohatni tashkul qilamiz</p>
@@ -165,7 +165,7 @@ const MainPage = () => {
         </div>
       </div>
 
-      <div className='max-w-[1200px] mx-auto text-center mt-32 text-white'>
+      <div className='max-w-[1500px] mx-auto text-center mt-32 text-white'>
         <h2 className='font-semibold text-3xl md:text-5xl  mt-[500px] md:mt-0 mb-3'>Turlar</h2>
         <p className='mb-8'>Kuningiz yaxshi utsin</p>
         <div className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10'>
@@ -182,7 +182,7 @@ const MainPage = () => {
       </div>
 
       <div className='bg-gray-800 py-32 mt-24'>
-        <div className='max-w-[1200px] mx-auto flex flex-col md:flex-row items-center space-y-10 md:space-y-0 text-white'>
+        <div className='max-w-[1500px] mx-auto flex flex-col md:flex-row items-center space-y-10 md:space-y-0 text-white'>
           <div className='flex-1'>
             <h2 className='text-center text-4xl font-bold mb-6 md:text-left'>Kompaniya haqida</h2>
             <p className='text-lg'>
@@ -196,7 +196,7 @@ const MainPage = () => {
       </div>
 
 
-      <div className='max-w-[1200px] mx-auto text-center mt-24 text-white'>
+      <div className='max-w-[1500px] mx-auto text-center mt-24 text-white'>
         <h2 className='font-semibold text-3xl md:text-5xl mb-3'>Mashhur Joylar</h2>
         <p className='mb-8'>Biz sizga faqat eng yaxshisini tavsiya beramiz</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 p-4 place-items-center">
@@ -212,7 +212,7 @@ const MainPage = () => {
       </div>
 
       <div className='bg-gray-800 py-16 mt-24 text-white'>
-        <div className='max-w-[1200px] mx-auto text-center'>
+        <div className='max-w-[1500px] mx-auto text-center'>
           <h2 className='font-semibold text-3xl md:text-5xl mb-3'>Sharhlar</h2>
           <p className='mb-8 text-white'>Bizning mijoslarimizni</p>
           <div className='flex flex-col items-center md:flex-row md:space-x-10 space-y-8 md:space-y-0'>
@@ -233,17 +233,25 @@ const MainPage = () => {
         </div>
       </div>
 
-      <footer className='max-w-[1200px] mx-auto py-16 text-white flex flex-col md:flex-row justify-between'>
+      <footer className='max-w-[1500px] mx-auto py-16 text-white flex flex-col md:flex-row justify-between '>
         <div className='w-full md:w-1/3'>
           <p className='text-2xl font-bold mt-8 md:mt-0 mb-3 md:mb-8'>Kontakt malumotlar</p>
           <div className='flex flex-col space-y-6'>
             <div className='flex items-center space-x-2'>
               <FaLocationDot size={20} />
-              <p>Uzbekistan Tashkent</p>
+              <p>Hamid Sulaymon MFY, Shota Rustaveli ko&apos;chasi, 23 uy, 18 xonadon</p>
             </div>
             <div className='flex items-center space-x-2 '>
               <FaPhoneAlt size={20} />
               <p>+998 88 198 00 09</p>
+            </div>
+            <div className='flex items-center space-x-2 '>
+              <MdEmail size={20} />
+              <p>abdullaev-22@mail.ru</p>
+            </div>
+            <div className='flex items-center space-x-2 '>
+              <FaUser size={20} />
+              <p>Шокиров Мухаммад</p>
             </div>
           </div>
         </div>
