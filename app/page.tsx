@@ -216,22 +216,29 @@ const MainPage = () => {
           <h2 className='font-semibold text-3xl md:text-5xl mb-3'>Sharhlar</h2>
           <p className='mb-8 text-white'>Bizning mijoslarimizni</p>
           <div className='flex flex-col items-center md:flex-row md:space-x-10 space-y-8 md:space-y-0'>
-            <div className="flex flex-col w-full md:w-1/2 items-start text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer">
+            <div className="flex flex-col w-full md:w-1/2 items-start text-start bg-gray-700 h-52 rounded-xl py-12 px-10 space-y-6 justify-between cursor-pointer">
               <p className="tracking-wider text-white">
                 Biz kichkina o&apos;g&apos;limiz (11 oylik) bilan dam olgandik, juda katta rahmat menejer Yuliyaga ajoyib turni tanlagani uchun. Yana bir katta rahmat sabr-toqatini ko&apos;rsatgani uchun...
               </p>
               <p className="text-white">Mubina</p>
             </div>
 
-            <div className="flex flex-col w-full md:w-1/2 items-start text-start bg-gray-700 rounded-xl py-12 px-10 space-y-6">
+            <div className="flex flex-col w-full md:w-1/2 items-start text-start bg-gray-700 h-52 rounded-xl py-12 px-10 space-y-6">
               <p className="tracking-wider text-white">
                 O&apos;tgan yilda o&apos;g&apos;limiz bilan dam olishga borish niyatida bo&apos;lib, kompaniyangiz orqali yo&apos;l oldik...
               </p>
               <p className="text-white">Shohjahon Holmuhamedov</p>
             </div>
           </div>
+          <section className='flex mt-16 flex-col w-full items-start text-start h-52 bg-gray-700 rounded-xl py-12 px-10 space-y-6'>
+            <h2 className='text-xl font-bold'>Ish vaqti</h2>
+            <p className='text-lg'>Dushanbadan Shanbagacha</p>
+            <p className='text-lg'>10:00 dan 22:00 gacha</p>
+          </section>
         </div>
       </div>
+
+
 
       <footer className='max-w-[1500px] mx-auto py-16 text-white flex flex-col md:flex-row justify-between '>
         <div className='w-full md:w-1/3'>
